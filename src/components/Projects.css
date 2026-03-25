@@ -1,0 +1,237 @@
+.projects-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #2563eb10, #1e40af10);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid #2563eb20;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transition: transform 0.3s ease;
+}
+
+.project-card.fullstack::before {
+  background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+  transform: scaleX(0);
+}
+
+.project-card.backend::before {
+  background: linear-gradient(90deg, #10b981, #059669);
+  transform: scaleX(0);
+}
+
+.project-card.frontend::before {
+  background: linear-gradient(90deg, #3b82f6, #1e40af);
+  transform: scaleX(0);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2563eb10, #1e40af10);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  flex: 1;
+}
+
+.project-type-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-type-badge.fullstack {
+  background: linear-gradient(135deg, #8b5cf620, #6d28d920);
+  color: #6d28d9;
+}
+
+.project-type-badge.backend {
+  background: linear-gradient(135deg, #10b98120, #05966920);
+  color: #059669;
+}
+
+.project-type-badge.frontend {
+  background: linear-gradient(135deg, #3b82f620, #1e40af20);
+  color: #1e40af;
+}
+
+.project-description {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.project-achievement {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #92400e;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.achievement-icon {
+  font-size: 1rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: #f1f5f9;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.project-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.project-link.github {
+  color: #2563eb;
+}
+
+.project-link.demo {
+  color: #10b981;
+}
+
+.project-link:hover {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.2rem;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .project-title {
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
