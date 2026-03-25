@@ -5,16 +5,9 @@
   position: relative;
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   padding: 120px 0 80px 0;
-  margin-top: 0;
   overflow: hidden;
 }
 
-/* Add this to ensure content is not hidden behind fixed navbar */
-body {
-  padding-top: 0;
-}
-
-/* Rest of your Hero.css remains the same */
 .hero-bg-shape {
   position: absolute;
   top: 0;
@@ -91,6 +84,7 @@ body {
   gap: 1rem;
   margin-bottom: 3rem;
   animation: fadeInUp 0.5s ease 0.4s both;
+  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -108,9 +102,14 @@ body {
   box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .btn-secondary {
@@ -132,6 +131,27 @@ body {
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: #10b981;
+  padding: 12px 32px;
+  border-radius: 12px;
+  border: 2px solid #10b981;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline-custom:hover {
+  background: #10b981;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
 }
 
 .hero-stats {
@@ -208,5 +228,10 @@ body {
   
   .hero-bg-shape {
     display: none;
+  }
+  
+  .btn-primary, .btn-secondary, .btn-outline-custom {
+    width: 100%;
+    text-align: center;
   }
 }
